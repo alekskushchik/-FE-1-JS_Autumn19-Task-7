@@ -162,24 +162,27 @@ function searchByIngredients() {
         }
     }
 }
-
 function filterByIngredients() {
     //Filter for ingredients
     let items = document.getElementsByClassName('item');
-
-    let filter = event.target;
+    let checked = document.querySelectorAll('input[type=checkbox]:checked');
+    let out = [];
+    for (let i = 0; i < checked.length; i++){
+        out.push(checked[i].name);
+    }
     let ingredients = document.getElementsByClassName("ingredients");
     for (let i = 0; i < items.length; i++) {
-        if (ingredients[i].innerHTML.toUpperCase().includes(filter.name.toUpperCase(), 0)) {
+        if (ingredients[i].innerHTML.toUpperCase().includes(out.toString().toUpperCase())) {
             items[i].style.display = "";
         } else {
             items[i].style.display = "none";
         }
     }
-    if (filter.checked !== true) {
+    if (!checked) {
         let productsPage = new Products();
         productsPage.renderGrid();
     }
+
 }
 
 function print(arr) {
