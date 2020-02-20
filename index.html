@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzeria</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="header"></header>
+    <div id="overlay">
+       <div class="popup">
+           <p>Выберите, в каком режиме просматривать сайт?</p><br>
+        <button class="btn-popup"><i class="fa fa-bars"></i>Список</button>
+        <button class="btn-popup"><i class="fa fa-th-large"></i>Сетка</button>
+    </div> 
+    </div>
+
+    <div class="overlay-edit-pizza">
+        <div class="popup-edit-pizza">
+            <a href='#' class="popup-edit-pizza__close">&#10006;</a>
+            <div class="popup-edit-pizza__content">
+            </div>
+        </div>
+    </div>
+
+    <div id="btnContainer"></div>
+    <div class="products-filter"></div>
+    <main class="products"></main>
+    <footer id="footer"></footer>
+    <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart"><i class="fa fa-window-close"></i></span><h2>Ваш кошик</h2>
+            <div class="cart-footer">
+                <h3>Сума до сплати: <span class="cart-total">0</span></h3>
+                <button class="clear-cart banner-btn">Очистити кошик</button>
+            </div>
+        </div>
+    </div>
+
+<!--Data products and LocalStorage-->
+    <script src="data/catalog.js"></script>
+    <script src="data/ingredients.js"></script>
+    <script src="root.js"></script>
+    <script src="script.js"></script>
+
+<!--Header-->
+<script src="components/Header/Header.js"></script>
+<link rel="stylesheet" href="components/Header/Header.css">
+
+<!--Products-->
+<script src="components/Products/Products.js"></script>
+<link rel="stylesheet" href="components/Products/Products.css">
+
+<!--Ui-->
+<script src="components/Ui/ui.js"></script>
+<link rel="stylesheet" href="components/Ui/ui.css">
+
+<!--Footer-->
+<script src="components/Footer/Footer.js"></script>
+<link rel="stylesheet" href="components/Footer/Footer.css">
+</body>
+</html>

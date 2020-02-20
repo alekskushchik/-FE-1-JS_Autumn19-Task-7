@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --mainBackground: #000000;
+    --primaryColor: #f09d51;
+    --mainWhite: #fff;
+    --mainBlack: #222;
+    --mainGrey: #ececec;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all 0.3s linear;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background: var(--mainBackground);
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    animation: fade .6s;
+    overflow: auto;
+}
+.popup {
+    top: 25%;
+    left: 0;
+    right: 0;       
+    margin: auto;
+    width: 30%;
+    height: 300px;
+    position: absolute;
+    padding: 15px 20px;
+    border: 1px solid #383838;
+    background: #fefefe;
+    z-index: 1000;
+    border-radius: 4px;
+    font: 14px/18px "Lato", sans-serif;
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    animation: fade .6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup p {
+    color: var(--mainBlack);
+}
+
+.overlay-edit-pizza {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+.overlay-edit-pizza.visible{
+    display: block;
+}
+
+.popup-edit-pizza {
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 40px 20px 30px;
+    width: 550px;
+    border-radius: 30px;
+}
+
+.popup-edit-pizza__close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: all .3s;
+}
+.popup-edit-pizza__close:hover{
+    color: #3f1b63;
+}
+
+.product-modal__title {
+    text-align: center;
+    color: var(--mainBlack);
+}
+
+.popup-edit-pizza__title {
+    font: 14px/18px "Lato", sans-serif;
+    text-align: center;
+    color: var(--mainBlack);
+}
+
+.icon-pizza {
+    width: 32px;
+    padding: 10px;
+    height: auto;
+}
+
+h2 {
+    margin: 0;
+    position: absolute;
+    top: 2.5%;
+    color: black;
+    text-align: center;
+}
+.description {
+    background: rgba(19, 15, 15, .8);
+    position: relative;
+    height: 100%;
+    z-index: 45;
+    padding: 10px;
+    text-align: justify;
+    word-break: break-word;
+}
+.ingredients {
+    margin-top: -40px;
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: .75em;
+    text-align: center;
+}
+
+.size {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+}
+
+form {
+    width: 50%;
+}
+
+#btnContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 80%;
+}
+
+.btn, .btn-popup {
+    height: 45px;
+    margin: 10px;
+    padding: 0 15px;
+    float: left;
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.btn i, .btn-popup i {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+#select {
+    width: 50%;
+    height: 45px;
+    display: block;
+    padding: .75rem 2.5rem .75rem 1rem;
+    background: #000;
+    border-radius: 3px;
+    font-size: .9em;
+    color: #ffffff;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.fa.fa-cart-plus {
+    font-size: 40px;
+}
+.cart-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primaryColor);
+    padding: 0 5px;
+    border-radius: 30%;
+    color: var(--mainWhite);
+}
+
+#filterInput {
+    width: 50%;
+    padding: .75rem 2.5rem .75rem 1rem;
+    background: #000;
+    border-radius: 3px;
+    font-size: .9em;
+    color: #ffffff;
+}
+
+
+.products-filter__ingredients-list {
+    margin: 10px auto;
+    width: 50%;
+    height: 150px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.products-filter__ingredients-item {
+    margin: 0 5px;
+}
